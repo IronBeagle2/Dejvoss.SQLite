@@ -52,18 +52,13 @@ namespace Dejvoss.SQLite
         }
 
         /// <summary>
-        /// Deletes (drops) a table; equivalent is deleteTable()
+        /// Deletes a table
         /// </summary>
         /// <param name="tableName">Name of the table to delete</param>
-        public void dropTable(String tableName)
+        public void deleteTable(String tableName)
         {
             runCommand($"DROP TABLE IF EXISTS {tableName};");
         }
-        /// <summary>
-        /// Drops (deletes) a table; equivalent is dropTable()
-        /// </summary>
-        /// <param name="tableName">Name of the table to delete</param>
-        public Action<String> deleteTable => dropTable;
 
         //TODO CLEAR ENTIRE TABLE
         public void clearTable(String tableName)
