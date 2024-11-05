@@ -67,7 +67,7 @@ namespace Dejvoss.SQLite
         }
 
         //TODO ADD SINGLE COLUMN TO TABLE
-        public void addToTable(String tableName, List<String> items)
+        public void insertIntoTable(String tableName, List<String> items)
         {
             //String cmdText = 
             //foreach(String i in items)
@@ -78,7 +78,7 @@ namespace Dejvoss.SQLite
             //command.ExecuteNonQuery();
             //command.Dispose();
 
-            runCommand("INSERT INTO table145 (\'test\') VALUES (\'perro\'), (\'rico\'), (\'setterano\');");
+            runCommand($"INSERT INTO {tableName} VALUES (\'perro\', \'sample\', \'asdasd\'), (\'rico\', \'test text\', \'asdasd\'), (\'setterano\', \'what a load of bullshit\', \'asdasd\');");
         }
 
         //TODO REMOVE COLUMN(s) FROM TABLE

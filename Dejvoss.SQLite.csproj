@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="Datatype.cs" />
+    <Compile Include="LibInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

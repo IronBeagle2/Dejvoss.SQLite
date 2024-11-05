@@ -12,6 +12,7 @@ namespace Dejvoss.SQLite
         // (c) DEJVOSS Productions 2024
         // A wrapper for SQLite
 
+        public static String name = "Dejvoss.SQLite";
         public static String version = "1.0.0-dev";
     }
 }
