@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,12 @@ namespace Dejvoss.SQLite
         public Database(String name)
         {
             dbName = name;
+
+            if(!File.Exists("sqlite\\sqlite3.exe"))
+            {
+                Console.WriteLine("sqlite3.exe not found, make sure it is in sqlite\\sqlite3.exe");
+                throw new FileNotFoundException();
+            }
         }
 
         public void test()
@@ -92,7 +99,7 @@ namespace Dejvoss.SQLite
         internal void runCommand(String cmd)
         {
             Process process = new Process();
-            process.StartInfo.FileName = Environment.CurrentDirectory + "\\sqlite\\sqlite3.exe";
+            process.StartInfo.FileName = "sqlite\\sqlite3.exe";
             process.StartInfo.Arguments = $"test.db \"{cmd}\"";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
